@@ -12,23 +12,17 @@
 | hdfs getconf -confKey dfs.default.chunk.view.size | Returns the value of specific key from the HDFS config file hdfs-default.xml |
 | hdfs getconf -confKey dfs.namenode.fs-limits.max-blocks-per-file | Returns the value of specific key from the HDFS config file hdfs-default.xml |
 | hdfs getconf -confKey dfs.replication | Returns the value of specific key from the HDFS config file hdfs-default.xml |
-
-
-hdfs dfs -ls / 
-hdfs dfs -ls -R / 
-hdfs dfs -cat /dir/file
-
-hdfs dfs -text /dir/file
-
-hdfs dfs -tail /dir/file
-
-
-hdfs dfs -df -h /
-
-hdfs dfs -find / -name "filename"
-
-hdfs dfs -put (copyFromLocal)
-hdfs dfs -get (copyToLocal)
+| hdfs dfs -ls / | Returnds the list of files and directories in root folder of the HDFS |
+hdfs dfs -ls -R / | Returnds recursively the list of files and directories including the content sub-folders in root folder of the HDFS |
+| hdfs dfs -cat /dir/file | Outputs the textual content of file |
+| hdfs dfs -text /dir/file | Outputs the textual content of file |
+| hdfs dfs -tail /dir/file | Same as previous two commands, but prints just last several lines |
+| hdfs dfs -df -h / | Returns available and used space of HDFS |
+| hdfs dfs -find / -name "filename" | Searches file "filename" in HDFS namespace |
+| hdfs dfs -put /home/hadoop/data.csv /data | Copies file from Local file system to HDFS |
+| hdfs dfs -copyFromLocal /home/hadoop/data.csv /data | Same as previous |
+| hdfs dfs -get /datadata.csv /home/hadoop | Copies file from HDFS to the local file system |
+| hdfs dfs -copyToLocal /datadata.csv /home/hadoop | Same as previous |
 
 hdfs dfs -cp course destination 
 

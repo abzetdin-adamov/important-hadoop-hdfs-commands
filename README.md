@@ -3,20 +3,16 @@
 |---|----|
 | hadoop version | Returns the version of installed Hadoop |
 | hdfs dfsadmin -report | Detailed report about HDFS, including available and used space, as well as healthiness of the file system |
-hdfs dfsadmin -getDatanodeInfo 192.168.56.105:50020 (IPC Port)
-hdfs dfsadmin -triggerBlockReport  192.168.56.105:50020
+| hdfs getconf -namenodes | Returns the list of NameNodes of the cluster |
+| hdfs getconf -secondaryNameNodes | Returns the list of Secondary NameNodes of the cluster |
 
-hdfs getconf -datanodes
-hdfs getconf -secondaryNameNodes
-
-Gets the value of specific key from the configuration
-hdfs getconf -confKey dfs.namenode.name.dir
-hdfs getconf -confKey yarn.resourcemanager.address
-hdfs getconf -confKey mapreduce.framework.name
-hdfs getconf -confKey dfs.namenode.name.dir
-hdfs getconf -confKey dfs.default.chunk.view.size
-hdfs getconf -confKey dfs.namenode.fs-limits.max-blocks-per-file
-hdfs getconf -confKey dfs.replication
+| hdfs getconf -confKey dfs.namenode.name.dir | Returns the value of specific key from the HDFS config file hdfs-default.xml |
+| hdfs getconf -confKey yarn.resourcemanager.address | Returns the value of specific key from the HDFS config file hdfs-default.xml |
+| hdfs getconf -confKey mapreduce.framework.name | Returns the value of specific key from the HDFS config file hdfs-default.xml |
+| hdfs getconf -confKey dfs.namenode.name.dir | Returns the value of specific key from the HDFS config file hdfs-default.xml |
+| hdfs getconf -confKey dfs.default.chunk.view.size | Returns the value of specific key from the HDFS config file hdfs-default.xml |
+| hdfs getconf -confKey dfs.namenode.fs-limits.max-blocks-per-file | Returns the value of specific key from the HDFS config file hdfs-default.xml |
+| hdfs getconf -confKey dfs.replication | Returns the value of specific key from the HDFS config file hdfs-default.xml |
 
 
 hdfs dfs -ls / 

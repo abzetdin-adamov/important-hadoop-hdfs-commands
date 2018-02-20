@@ -21,24 +21,14 @@ hdfs dfs -ls -R / | Returnds recursively the list of files and directories inclu
 | hdfs dfs -find / -name "filename" | Searches file "filename" in HDFS namespace |
 | hdfs dfs -put /home/hadoop/data.csv /data | Copies file from Local file system to HDFS |
 | hdfs dfs -copyFromLocal /home/hadoop/data.csv /data | Same as previous |
-| hdfs dfs -get /datadata.csv /home/hadoop | Copies file from HDFS to the local file system |
-| hdfs dfs -copyToLocal /datadata.csv /home/hadoop | Same as previous |
-
-hdfs dfs -cp course destination 
-
-hdfs dfs -mv
-
-hdfs dfs -rm
-
-hdfs dfs -rm -r
-
-hdfs dfs -rmdir [--ignore-fail-on-non-empty] # if the key --ignore-fail-on-non-empty is used, directory will be deleted even if its not empty
-
-hdfs dfs -stat [format]
-
-hdfs dfs -stat "%b %g %r" /file
-
-Stat Formats:
+| hdfs dfs -get /data/data.csv /home/hadoop | Copies file from HDFS to the local file system |
+| hdfs dfs -copyToLocal /data/data.csv /home/hadoop | Same as previous |
+| hdfs dfs -cp /data/data.csv /user/hive | Copies file from one HDFS location (folder) to another HDFS location | 
+| hdfs dfs -mv /data/data.csv /user/hive | Moves file from one HDFS location (folder) to another HDFS location | 
+| hdfs dfs -rm /data/data.csv | Deletes file from HDFS |
+| hdfs dfs -rm -r /data | Deletes directory from HDFS (even if not empty) |
+| hdfs dfs -rmdir [--ignore-fail-on-non-empty] /data | Deletes empty directory, but if the key --ignore-fail-on-non-empty is used, directory will be deleted even if its not empty |
+hdfs dfs -stat [format] | Stat Formats:
 %b  Size of file in bytes
 %F  Will return "file", "directory", or "symlink" depending on the type of inode
 %g  Group name
@@ -48,6 +38,8 @@ Stat Formats:
 %u  Username of owner
 %y  Formatted mtime of inode
 %Y  UNIX Epoch mtime of inode
+hdfs dfs -stat "%b %g %r" /file |
+
 
 hdfs dfs -du /fileORdir 	# returns the length of file or aggregated size of files in directory
 

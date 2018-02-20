@@ -1,12 +1,12 @@
 # Important Hadoop HDFS Commands
 | Command | Description
 |---|----|
-| hadoop version | Returns the version of installed Hadoop |
+| `hadoop version` | Returns the version of installed Hadoop |
 | hdfs dfsadmin -report | Detailed report about HDFS, including available and used space, as well as healthiness of the file system |
-| hdfs getconf -namenodes | Returns the list of NameNodes of the cluster |
-| hdfs getconf -secondaryNameNodes | Returns the list of Secondary NameNodes of the cluster |
-| hdfs getconf -confKey dfs.namenode.name.dir | Returns the value of specific key from the HDFS config file hdfs-default.xml |
-| hdfs getconf -confKey yarn.resourcemanager.address | Returns the value of specific key from the HDFS config file hdfs-default.xml |
+| `hdfs getconf -namenodes` | Returns the list of NameNodes of the cluster |
+| `hdfs getconf -secondaryNameNodes` | Returns the list of Secondary NameNodes of the cluster |
+| `hdfs getconf -confKey dfs.namenode.name.dir` | Returns the value of specific key from the HDFS config file hdfs-default.xml |
+| `hdfs getconf -confKey yarn.resourcemanager.address` | Returns the value of specific key from the HDFS config file hdfs-default.xml |
 | hdfs getconf -confKey mapreduce.framework.name | Returns the value of specific key from the HDFS config file hdfs-default.xml |
 | hdfs getconf -confKey dfs.namenode.name.dir | Returns the value of specific key from the HDFS config file hdfs-default.xml |
 | hdfs getconf -confKey dfs.default.chunk.view.size | Returns the value of specific key from the HDFS config file hdfs-default.xml |

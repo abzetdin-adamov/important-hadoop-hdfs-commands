@@ -28,7 +28,8 @@ hdfs dfs -ls -R / | Returnds recursively the list of files and directories inclu
 | hdfs dfs -rm /data/data.csv | Deletes file from HDFS |
 | hdfs dfs -rm -r /data | Deletes directory from HDFS (even if not empty) |
 | hdfs dfs -rmdir [--ignore-fail-on-non-empty] /data | Deletes empty directory, but if the key --ignore-fail-on-non-empty is used, directory will be deleted even if its not empty |
-| hdfs dfs -stat [format] | Stat Formats: |
+| hdfs dfs -stat [format] file | Returns statistical data related to file or directory |
+| | Statistic Formats: |
 | | %b  Size of file in bytes |
 | | %F  Will return "file", "directory", or "symlink" depending on the type of inode |
 | | %g  Group name |
@@ -39,19 +40,12 @@ hdfs dfs -ls -R / | Returnds recursively the list of files and directories inclu
 | | %y  Formatted mtime of inode |
 | | %Y  UNIX Epoch mtime of inode |
 | | Example hdfs dfs -stat "%b %g %r" /file |
-
-
-hdfs dfs -du /fileORdir 	# returns the length of file or aggregated size of files in directory
-
-hdfs dfs -chgrp [R]
-
-hdfs dfs -chmod		# specifies permission
-
-hdfs dfs -chown
-
-hdfs dfs -usage HDFScommand		# describes the usage of the HDFS command
-
-
-hdfs fsck /data/news.txt 	#general information about file
-
-hdfs fsck /data/news.txt -files 
+| | |
+| hdfs dfs -du /file OR dir | Returns the length of file or aggregated size of files in directory |
+| hdfs dfs -chgrp [R] /file or /dir | Changes group assosiation of file or directory. "R" can help to apply this action to all content of directory |
+| hdfs dfs -chmod	/file or /dir | Specifies permission to file or directory. Example: hdfs dfs -chmod	644 /file (Read/Write for owner, Read-only for Group and Public) |
+| hdfs dfs -chown /file or /dir | Changes the user who is owner of file or directory.
+| hdfs fsck /data/news.txt -files | Returns general information about file |
+| hdfs fsck /data/news.txt -files -blocks | In addition to previous, returns general information about each block the file divided to |
+| hdfs fsck /data/news.txt -files -blocks -locations | In addition to previous, returns location of each block's replica (hostname/IP address) |
+|hdfs dfs -usage HDFScommand | Returns description/syntax of usage of the specified HDFS command |

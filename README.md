@@ -28,17 +28,17 @@ hdfs dfs -ls -R / | Returnds recursively the list of files and directories inclu
 | hdfs dfs -rm /data/data.csv | Deletes file from HDFS |
 | hdfs dfs -rm -r /data | Deletes directory from HDFS (even if not empty) |
 | hdfs dfs -rmdir [--ignore-fail-on-non-empty] /data | Deletes empty directory, but if the key --ignore-fail-on-non-empty is used, directory will be deleted even if its not empty |
-hdfs dfs -stat [format] | Stat Formats:
-%b  Size of file in bytes
-%F  Will return "file", "directory", or "symlink" depending on the type of inode
-%g  Group name
-%n  Filename
-%o  HDFS Block size in bytes ( 128MB by default )
-%r  Replication factor
-%u  Username of owner
-%y  Formatted mtime of inode
-%Y  UNIX Epoch mtime of inode
-hdfs dfs -stat "%b %g %r" /file |
+| hdfs dfs -stat [format] | Stat Formats: |
+| | %b  Size of file in bytes |
+| | %F  Will return "file", "directory", or "symlink" depending on the type of inode |
+| | %g  Group name |
+| | %n  Filename |
+| | %o  HDFS Block size in bytes ( 128MB by default ) |
+| | %r  Replication factor |
+| | %u  Username of owner |
+| | %y  Formatted mtime of inode |
+| | %Y  UNIX Epoch mtime of inode |
+| | Example hdfs dfs -stat "%b %g %r" /file |
 
 
 hdfs dfs -du /fileORdir 	# returns the length of file or aggregated size of files in directory
